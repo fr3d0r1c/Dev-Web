@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VueJs Composant</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="page d'ajout dynamique d'élément HTML">
+        <meta name="keywords" content="SVG">
+        <meta name="author" content="Clement Aubert du Petit Thouars">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src='app.js'></script>
+    </head>
+
+    <body>
+        <div id="message_app">
+            <h1>Système de messagerie</h1>
+            <message property="Bien ?" bg_color="green"></message>
+            <message property="Et toi ?" bg_color="lightblue"></message>
+        </div>
+
+        <div id="counter_app">
+            <h1>Compteur</h1>
+            <p>Compteur total {{ globalCounter }} (dernier ajout : {{ lastCounter }})</p>
+
+            <counter-button :step=5 @update_counter="incrementGlobalCounter"></counter-button>
+            <counter-button @update_counter="incrementGlobalCounter"></counter-button>
+        </div>
+    </body>
+</html>
