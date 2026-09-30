@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VueJs Composant</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="page d'ajout dynamique d'élément HTML">
+        <meta name="keywords" content="SVG">
+        <meta name="author" content="Clement Aubert du Petit Thouars">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src='app.js'></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="number" v-model="chiffre1"/>
+            <select v-model="operateur">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">x</option>
+                <option value="%">/</option>
+            </select>
+            <input type="number" v-model="chiffre2"/>
+            <p> = {{result}}</p>
+        </div>
+    </body>
+</html>
