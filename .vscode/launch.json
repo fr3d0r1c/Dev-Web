@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Lancer DAB Interactif",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/step15_DAB_object.js.js",
+            "console": "integratedTerminal"
+        }
+    ]
+}
