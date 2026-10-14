@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJs Composant</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="page d'ajout dynamique d'élément HTML">
+	<meta name="keywords" content="SVG">
+	<meta name="author" content="Clement Aubert du Petit Thouars">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/vue@3"></script>
+	
+</head>
+<body>
+	
+	<div id="app">
+		<h1>coucou</h1>
+		<p>Compteur total {{globalCounter}}</p>
+
+		<compter-zone @update_counter="incrementGlobalCounter" my_message="salut" bkgcss="green" ></compter-zone>
+		<compter-zone @update_counter="incrementGlobalCounter" my_message="bonjour" bkgcss="red" ></compter-zone>
+	</div>
+	<script type="module" >
+import CompterZone from "./CompterZone.js";
+
+Vue.createApp({
+	data:()=>({
+		globalCounter:0,
+	}),
+	methods:{
+		incrementGlobalCounter(){
+			this.globalCounter++
+		}
+	},
+	components: {
+		'compter-zone' : CompterZone,
+	}
+}).mount("#app")
+	</script>
+</body>
+</html>

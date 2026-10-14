@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>VueJs Composant</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="page d'ajout dynamique d'élément HTML">
+	<meta name="keywords" content="SVG">
+	<meta name="author" content="Clement Aubert du Petit Thouars">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/vue@3"></script>
+    <script type=module src="app.js"></script>
+
+    <body>
+
+        <div id="app">
+            <h3>Default</h3>
+            <user-card></user-card>
+
+            <h3>Surcharge globale</h3>
+            <user-card :user="user" ></user-card>
+
+            <h3>Surcharge rendu</h3>
+            <user-card :user="user">
+                <template #welcome>
+                    Binevenue à toi Grand maitre {{user.firstname}} {{user.lastname.toUpperCase()}}!
+                </template>
+            </user-card>
+        </div>
+    </body>
+	
+</head>
+</html>
